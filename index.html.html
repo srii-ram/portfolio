@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriram R - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .welcome-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://lh3.googleusercontent.com/d/1kGybtpd6UzLdsDGj0y1zhlrimPb2_pvb') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .enter-btn {
+            background: #e67e22;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .enter-btn:hover {
+            background: #d35400;
+        }
+        .content {
+            display: none;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 10px auto;
+            border: 3px solid #fff;
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .dark-mode section {
+            background: #2c3e50;
+            color: #fff;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        .toggle-dark-mode {
+            background: #e67e22;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function showContent() {
+            document.querySelector('.welcome-page').style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+    <div class="welcome-page">
+        <h1>Welcome to My Page</h1>
+        <p>"Success is not the key to happiness. Happiness is the key to success."</p>
+        <button class="enter-btn" onclick="showContent()">Explore</button>
+    </div>
+    
+    <div class="content">
+        <header>
+            <img src="https://lh3.googleusercontent.com/d/1HMmxjR94ZIcjKgN3208EGiSPZ4b0k_Wm" alt="Sriram R" class="profile-img">
+            <h1>Sriram R</h1>
+            <p>IT Sales & Relationship Manager</p>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Results-driven IT sales professional with a strong background in relationship management and business development. Skilled in client engagement, sales strategy, and problem-solving.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, Python, SQL</li>
+                <li>CRM Software, IT Sales, Technical Support</li>
+                <li>Lead Generation, Customer Relationship Management</li>
+                <li>Negotiation, Consultative Selling, Sales Strategy</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>B.E in Computer Engineering</strong> - Kalaignar Karunanidhi Institute of Technology (2021-2024) - 7.81 CGPA</p>
+            <p><strong>Diploma in Computer Engineering</strong> - CIT Sandwich Polytechnic College (2017-2020) - 67%</p>
+        </section>
+        
+        <section id="experience">
+            <h2>Experience</h2>
+            <h3>Ramani MG - Relationship Manager (8 months)</h3>
+            <p>Managed and nurtured client relationships, executed sales strategies, and ensured customer satisfaction through personalized IT solutions.</p>
+            
+            <h3>Vasantha Advanced Systems - Testing & Debugging (5 months)</h3>
+            <p>Conducted system testing and debugging for enhanced performance, contributing to the overall quality assurance process.</p>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <h3>IoT-Based Smart Parking System</h3>
+            <p>Developed a smart parking solution that helps users locate available parking spots through a mobile application and cloud integration.</p>
+            
+            <h3>Hospital Management System</h3>
+            <p>Designed a comprehensive hospital management system that streamlines patient data, appointment scheduling, and hospital operations.</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><i class="fas fa-envelope"></i> Email: sriramgrj@gmail.com</p>
+            <p><i class="fas fa-phone"></i> Phone: 9344093494</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Coimbatore, Tamil Nadu</p>
+            <p><i class="fab fa-linkedin"></i> <a href="http://www.linkedin.com/in/sriramsrk" target="_blank">LinkedIn</a></p>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Sriram R. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
